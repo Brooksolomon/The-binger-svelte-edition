@@ -37,7 +37,9 @@
     }
     temp();
 </script>
+
 <div class="Thebody" style=" background-image: url({concatctinate(Details.backdrop_path)}); ">
+  <iframe src='https://vidsrc.to/embed/movie/{Details.id}'class='theFrame' title="The movie" allowfullscreen></iframe>
     <div class="card card-side  bg-base-100 shadow-xl w-3/4   mt-5  TheCard text-center" style="opacity: 0.95; position:relative;">
         <!-- <figure style="height: 500px; width:600px " class="hidden"><img  class="hidden"  src="{concatctinate(Details.poster_path)}" alt="Movie" /></figure> -->
         <div class="card-body">
@@ -61,7 +63,7 @@
        
     </div>
 </div>
-<GridDisplay propValue = {Reccomendations} />
+<!-- <GridDisplay propValue = {Reccomendations} /> -->
 
 <style>
   .Thebody
@@ -80,6 +82,8 @@ background-size: cover;
     @media (min-width: 475px) {
       
       .TheCard {margin-left: 65px;  }
+      .theFrame{width: 100%;height: 50%; margin-top: 40px;}
+      
     }
     @media (min-width: 555px) {
       
@@ -90,7 +94,8 @@ background-size: cover;
       .TheCard { grid-template-columns: repeat(2, 1fr);margin-left: 10px;  }
     }
     @media (min-width: 900px) {
-      .TheCard { grid-template-columns: repeat(3, 1fr);margin-left: 50px; }
+      .TheCard { grid-template-columns: repeat(3, 1fr);margin-left: 50px;margin-bottom: 1000px; }
+      .theFrame{width: 70%;height: 90%; margin-left: 300px;}
     }
     @media (min-width: 1200px) {
       .TheCard { grid-template-columns: repeat(4, 1fr);margin-left: 50px; }

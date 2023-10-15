@@ -13,12 +13,17 @@ const options = {
     return await myres.json()
     }
     let Showid = params.title
+    let season = params.season
+    let episode = params.episode
 
 
 
     return {
         Details:fetchDetails(),
-        Showid:Showid
+        Showid:Showid,
+        season:season,
+        episode:episode
+
     }
     
     

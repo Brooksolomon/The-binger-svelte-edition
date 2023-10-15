@@ -3,6 +3,8 @@
     export let data
     const {Details} = data
     const {Showid} =data
+    const {season} =data
+    const {episode} =data
     import { authFunc,authStore } from '../../../../Authentication/Auth';
     let reload=false;
     async function checkEpisode(epid)
@@ -31,7 +33,8 @@ width: 100%;   background-position: center;
 background-repeat: no-repeat;
 background-size: cover;"
 >
-    <div class="card card-side  bg-base-100 shadow-xl mycard text-center " style="opacity: 0.95; position:relative;">
+    <iframe src='https://vidsrc.to/embed/tv/{Showid}/{season}/{episode}'class='theFrame' title="The movie" allowfullscreen></iframe>
+    <div class="card   bg-base-100 shadow-xl mycard text-center " style="opacity: 0.95; position:relative;">
         <div class="card-body">
             
             <h1 class="card-title text-3xl text-left ">Season {Details.season_number} episode {Details.episode_number} : {Details.name}</h1>
@@ -86,6 +89,7 @@ background-size: cover;"
             margin-left: 170px;
             width: 1600px;
         } 
+        .theFrame{width: 70%;height: 90%; margin-left: 300px;}
         } 
 </style>
 
