@@ -40,7 +40,7 @@
 
 <div class="Thebody" style=" background-image: url({concatctinate(Details.backdrop_path)}); ">
   <iframe src='https://vidsrc.to/embed/movie/{Details.id}'class='theFrame' title="The movie" allowfullscreen></iframe>
-    <div class="card card-side  bg-base-100 shadow-xl w-3/4   mt-5  TheCard text-center" style="opacity: 0.95; position:relative;">
+    <div class="card card-side  bg-base-300 shadow-xl w-3/4   mt-5  TheCard text-center" style="opacity: 2; position:relative;">
         <!-- <figure style="height: 500px; width:600px " class="hidden"><img  class="hidden"  src="{concatctinate(Details.poster_path)}" alt="Movie" /></figure> -->
         <div class="card-body">
             <h1 class="card-title text-3xl text-center">{Details.original_title}</h1>
@@ -58,12 +58,13 @@
             </a>
             {/if}
             <p >{Details.overview}</p>
-            
+          
         </div>
        
     </div>
 </div>
-<!-- <GridDisplay propValue = {Reccomendations} /> -->
+<div class="my-32">&nbsp;</div>
+<GridDisplay propValue = {Reccomendations} />
 
 <style>
   .Thebody
@@ -92,6 +93,8 @@ background-size: cover;
     @media (min-width: 600px) {
       
       .TheCard { grid-template-columns: repeat(2, 1fr);margin-left: 10px;  }
+      
+      /* git push https://github.com/brooksolo2/The-binger --force */
     }
     @media (min-width: 900px) {
       .TheCard { grid-template-columns: repeat(3, 1fr);margin-left: 50px;margin-bottom: 1000px; }
