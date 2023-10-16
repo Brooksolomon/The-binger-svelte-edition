@@ -1,27 +1,10 @@
 <script>
-    let check = false
-    import Mynavbar from "./navBars/mynavbar.svelte"
-	import "../app.css";
-    import Mynavbarloggedout from "./navBars/Mynavbarloggedout.svelte";
-    import {authStore} from '../routes/Authentication/Auth' 
-
-    if (typeof window !== 'undefined') {
-  // Perform localStorage action
-   authStore.set(localStorage.getItem('curr'))
-}
+	let check = false
+	import Navbar from '../lib/components/Navbar.svelte'
+	import '../app.css'
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{#if $authStore}
-<Mynavbar/>
-{:else}
-<Mynavbarloggedout/>
-{/if}
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<slot></slot>
-
-<style>
-
-
-
-</style>
+<Navbar />
+<slot />

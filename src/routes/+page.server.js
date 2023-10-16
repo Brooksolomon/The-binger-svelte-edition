@@ -6,20 +6,20 @@ const options = {
   }
 };
 
-export const load = async ({fetch}) => {
+export const load = async ({ fetch }) => {
 
-    const fetchLatest = async() => {
+  const fetchLatest = async () => {
     const myres = await fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
     return await myres.json()
-    }
-    const fetchMovies = async() =>{
-    const myres = await  fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', options)
+  }
+  const fetchMovies = async () => {
+    const myres = await fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', options)
     return await myres.json()
-    }
+  }
 
-    return {
-        Latest:fetchLatest(),
-        Movies : fetchMovies()
-    }
+  return {
+    Latest: fetchLatest(),
+    Movies: fetchMovies()
+  }
 
 }
