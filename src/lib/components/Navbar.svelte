@@ -1,13 +1,13 @@
 <script lang="ts">
 	//@ts-nocheck
-	import { authStore } from '../../routes/Authentication/Auth'
+	import { authFunc, authStore } from '$lib/Auth/Auth'
 
 	import { blur } from 'svelte/transition'
 	import { onMount } from 'svelte'
 	import { themeChange } from 'theme-change'
 	import { browser } from '$app/environment'
 
-	import { Sun, Moon, PaintBrush, ListDashes } from 'phosphor-svelte'
+	import { Sun, Moon, PaintBrush, ListDashes, GoogleLogo, DoorOpen, Spinner } from 'phosphor-svelte'
 
 	if (browser) {
 		authStore.set(localStorage.getItem('curr'))
@@ -60,13 +60,27 @@
 		</ul>
 	</div>
 	<div class="navbar-end gap-4">
-		{#if $authStore !== null}
-			<a class="btn btn-primary btn-outline btn-xs" href="/Authentication">Logout</a>
+		{#if browser}
+			{#if $authStore !== null}
+				<button class="btn btn-primary btn-outline btn-sm" on:click={authFunc.signoutfunction}>
+					<DoorOpen size="20" />
+					Log out
+				</button>
+			{:else}
+				<button class="btn btn-primary btn-sm" on:click={authFunc.loginFunciton}>
+					<GoogleLogo size="20" />
+					Login with google
+				</button>
+			{/if}
 		{:else}
-			<a class="btn btn-primary btn-outline btn-xs" href="/Authentication">Login</a>
+			<button class="btn btn-primary btn-sm">
+				<Spinner size="20" />
+				Checking ...
+			</button>
 		{/if}
 
 		<button
+			class="ml-4"
 			data-toggle-theme="dark,light"
 			on:click={() => {
 				theme = getTheme()

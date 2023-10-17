@@ -1,12 +1,11 @@
 <script>
 	import MovieGrid from '$components/MovieGrid.svelte'
-	import { authFunc, authStore } from '../../Authentication/Auth'
+	import { authFunc, authStore } from '../../../lib/Auth/Auth'
 	import { concat, mergeGenres, cropName } from '$utils/utils.ts'
 	export let data
 
 	const { Details } = data
 	const { Reccomendations } = data
-
 	let watched = false
 
 	function addwatched() {
@@ -24,15 +23,17 @@
 	temp()
 </script>
 
-<div class="Thebody"  style=" background-image: url({concat(Details.backdrop_path)}); ">
+<div
+	class="flex min-h-screen w-full flex-row items-center justify-center bg-cover bg-center bg-no-repeat p-12"
+	style=" background-image: url({concat(Details.backdrop_path)}); ">
 	<iframe
 		src="https://vidsrc.to/embed/movie/{Details.id}"
-		class="theFrame"
-		title="The movie"
+		class="min-h-screen w-10/12"
+		title={Details.name}
 		allowfullscreen>
-  </iframe>
+	</iframe>
 	<div
-		class="TheCard card card-side mt-5 w-3/4 bg-base-300 text-center shadow-xl"
+		class=" TheCard card card-side mt-5 hidden w-3/4 bg-base-300 text-center shadow-xl"
 		style="opacity: 2; position:relative;">
 		<!-- <figure style="height: 500px; width:600px " class="hidden"><img  class="hidden"  src="{concatctinate(Details.poster_path)}" alt="Movie" /></figure> -->
 		<div class="card-body">
@@ -66,15 +67,6 @@
 <MovieGrid data={Reccomendations} />
 
 <style>
-	.Thebody {
-		padding-top: 20px;
-		height: 700px;
-		width: 100%;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-
 	@media (min-width: 475px) {
 		.TheCard {
 			margin-left: 65px;

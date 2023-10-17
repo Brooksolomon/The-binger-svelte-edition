@@ -5,6 +5,7 @@
 	import { browser } from '$app/environment'
 
 	export let searchTerm: string
+	export let baseRoute: '/searchResult/' | '/SearchResultShows/' = '/searchResult/'
 	let innerWidth
 	const getTheme = () => {
 		if (browser) {
@@ -21,7 +22,7 @@
 		{#each Array(9) as item, i}
 			{@const randX = i + Math.random() * innerWidth * 0.6 + 90}
 			{@const randY = i + Math.random() * 10}
-			{@const scaleMultiplier = Math.random() * 7}
+			{@const scaleMultiplier = Math.random() * 2}
 			{@const color = '#' + getRandomHex(6)}
 
 			{#if browser && getTheme() == 'dark'}
@@ -34,12 +35,12 @@
 		{/each}
 		<input
 			type="text"
-			placeholder="Search movies and series "
+			placeholder="Search {baseRoute == '/SearchResultShows/' ? 'Shows' : 'Movies'} "
 			class="input join-item input-secondary no-animation input-lg z-50 w-full !rounded-l-2xl border-2 border-r-0 border-base-300 bg-transparent backdrop-blur-xl transition-all focus:outline-none"
 			bind:value={searchTerm} />
 
 		<a
-			href="/searchResult/{searchTerm}"
+			href="{baseRoute}{searchTerm}"
 			class="btn btn-secondary join-item btn-lg rounded-2xl !border-2 !border-base-300"
 			class:btn-disabled={searchTerm == ''}>
 			<MagnifyingGlass weight="duotone" size="20" />
