@@ -6,7 +6,7 @@
 
 ### Technologies Used : Html, CSS, JavaScript, SvelteKit , Firebase ,TMDB API.
 
-### Description : A movie and tv show searching and tracking platform that lets you stay upto date with your current shows and movies 
+### Description : A movie and tv show searching and tracking platform that lets you stay upto date with your current shows and movies ,This is a simple movie tracking application.
 ## Code Structure :
 ### All of the code is found in src / routes:
   ```Authentication: where all the user login functions and read and write functions reside```
