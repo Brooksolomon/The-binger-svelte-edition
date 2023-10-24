@@ -4,7 +4,27 @@
 
 ### Live link : https://the-binger.vercel.app/
 
+### Technologies Used : Html, CSS, JavaScript, SvelteKit , Firebase ,TMDB API.
+
 ### Description : A movie and tv show searching and tracking platform that lets you stay upto date with your current shows and movies 
+## Code Structure :
+### All of the code is found in src / routes:
+  ```Authentication: where all the user login functions and read and write functions reside```
+  
+  ```Movies:The homepage code```
+  
+  ```SearchResultForShows,SearchResult : The results of the search button```
+  
+  ```grids : Grid component for the movie displays```
+  
+  ```myMovies, myShows : Their respective pages for the user information```
+  
+  ```navBar : The navbar components for logged in and logged out user```
+  
+  ```Showhome : The home page for a tv show```
+  
+  
+
 
 ### Screenshots : 
 
