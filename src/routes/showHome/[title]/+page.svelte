@@ -97,6 +97,7 @@
 
 			<p>{Details.overview}</p>
 			{#each localSeasons as season}
+			{#if season.season_number > 0}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<div class="w-full rounded-md p-1 transition-all">
@@ -146,6 +147,7 @@
 									<span class="loading loading-ball loading-lg"></span>
 								{/if}
 								<div>
+									<div class="myShowGrid">
 									{#each ShowSeasons[season.season_number - 1].episodes as e}
 										<div>
 											{#key reset}
@@ -186,10 +188,12 @@
 										</div>
 									{/each}
 								</div>
+								</div>
 							</div>
 						</div>
 					{/if}
 				</div>
+			{/if}
 			{/each}
 			{#each Details.seasons as s (s.season_number)}
 				{#if s.season_number > 0}
@@ -201,3 +205,20 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.myShowGrid{
+		display: grid;
+		grid-template-columns: auto auto auto auto auto;
+	}
+	@media (min-width: 300px) {
+  	.myShowGrid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 600px) {
+  	.myShowGrid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 800px) {
+  	.myShowGrid { grid-template-columns: repeat(5, 1fr); }
+}
+</style>
