@@ -1,11 +1,11 @@
 <script>
-    import {mergeGenres , concatctinate} from '../../../../helpers/helpers'
+    import {mergeGenres , concat as concatctinate} from '../../../../../utils/utils'
     export let data
     const {Details} = data
     const {Showid} =data
     const {season} =data
     const {episode} =data
-    import { authFunc,authStore } from '../../../../Authentication/Auth';
+    import { authFunc,authStore } from '../../../../../lib/Auth/Auth';
     let reload=false;
     async function checkEpisode(epid)
     {
