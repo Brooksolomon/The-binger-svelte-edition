@@ -9,3 +9,4 @@
 <SearchBar bind:searchTerm />
 
 <GridDisplay data={data.Latest} />
+//entry point
