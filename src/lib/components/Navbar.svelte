@@ -48,7 +48,7 @@
 				{/if}
 			</ul>
 		</div>
-		<a href="/" class=" px-4 text-xl font-semibold">The Binger.</a>
+		<a href="/" class="text-xl font-semibold">The Binger.</a>
 	</div>
 	<div class="navbar-center hidden lg:flex">
 		<ul class="menu menu-horizontal px-1">
