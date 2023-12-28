@@ -28,17 +28,17 @@
 </script>
 
 <div class="navbar bg-base-200 px-12 text-primary">
-	<div class="navbar-start">
+	<div class="navbar-start" >
 		<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-		<div class="dropdown">
+		<div class="dropdown"  >
 			<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 			<!-- svelte-ignore a11y-label-has-associated-control -->
-			<label tabindex="0" class="btn btn-ghost lg:hidden">
+			<label tabindex="9999" class="btn btn-ghost lg:hidden">
 				<ListDashes size="24" />
 			</label>
 			<ul
-				tabindex="0"
-				class="menu dropdown-content rounded-box menu-sm z-[1] mt-3 w-52 bg-base-100 p-2 shadow">
+				tabindex="9999"
+				class="menu dropdown-content rounded-box menu-lg z-[100] mt-3 w-52 bg-base-200 p-2 shadow">
 				<li><a href="/">Movies</a></li>
 				<li><a href="/shows">Shows</a></li>
 				{#if $authStore !== null}
@@ -47,7 +47,7 @@
 				{/if}
 			</ul>
 		</div>
-		<a href="/" class=" px-4 text-xl font-semibold">The Binger</a>
+		<a href="/" class=" px-4 text-xl font-semibold">The Binger.</a>
 	</div>
 	<div class="navbar-center hidden lg:flex">
 		<ul class="menu menu-horizontal px-1">
