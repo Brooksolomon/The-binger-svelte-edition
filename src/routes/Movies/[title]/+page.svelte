@@ -30,40 +30,44 @@
 		src="https://vidsrc.to/embed/movie/{Details.id}"
 		class="min-h-screen w-10/12"
 		title={Details.name}
-		allowfullscreen>
+		allowfullscreen
+		width="200"
+		> 
 	</iframe>
-	<div
-		class=" TheCard card card-side mt-5 hidden w-3/4 bg-base-300 text-center shadow-xl"
-		style="opacity: 2; position:relative;">
-		<!-- <figure style="height: 500px; width:600px " class="hidden"><img  class="hidden"  src="{concatctinate(Details.poster_path)}" alt="Movie" /></figure> -->
-		<div class="card-body">
-			<h1 class="card-title text-center text-3xl">{Details.original_title}</h1>
 
-			{mergeGenres(Details.release_date, Details.genres, Details.runtime)}
-			{#if $authStore}
-				{#if watched}
-					<button
-						class="btn btn-error btn-outline w-60 hover:scale-105"
-						style="position:absolute, top: 0; left: 0; "
-						on:click={deleteWatched}>Unwatch</button>
-				{:else}
-					<button
-						class="btn btn-success btn-outline w-60 hover:scale-105"
-						style="position:absolute, top: 0; left: 0; "
-						on:click={addwatched}>Mark as watched</button>
-				{/if}
-			{:else}
-				<a href="/Authentication">
-					<button
-						class="btn-failed btn btn-outline w-60 hover:scale-105"
-						style="position:absolute, top: 0; left: 0; ">Login to track</button>
-				</a>
-			{/if}
-			<p>{Details.overview}</p>
-		</div>
-	</div>
+		<!-- <figure style="height: 500px; width:600px " class="hidden"><img  class="hidden"  src="{concatctinate(Details.poster_path)}" alt="Movie" /></figure> -->
+
+	
 </div>
-<div class="my-32">&nbsp;</div>
+<!-- <div
+class="absolute top-40 z-50 mx-12 mt-5 rounded-md bg-base-100/80 shadow-xl backdrop-blur-sm"> -->
+<div class="card-body items-center  top-40  mx-12 mt-5 rounded-md bg-base-100/80 shadow-xl backdrop-blur-sm">
+	<h1 class="card-title text-center text-3xl">{Details.original_title}</h1>
+
+	{mergeGenres(Details.release_date, Details.genres, Details.runtime)}
+	{#if $authStore}
+		{#if watched}
+			<button
+				class="btn btn-error btn-outline w-60 hover:scale-105"
+				style="position:absolute, top: 0; left: 0; "
+				on:click={deleteWatched}>Unwatch</button>
+		{:else}
+			<button
+				class="btn btn-success btn-outline w-60 hover:scale-105"
+				style="position:absolute, top: 0; left: 0; "
+				on:click={addwatched}>Mark as watched</button>
+		{/if}
+	{:else}
+		<a href="/Authentication">
+			<button
+				class="btn-failed btn btn-outline w-60 hover:scale-105"
+				style="position:absolute, top: 0; left: 0; ">Login to track</button>
+		</a>
+	{/if}
+	<p>{Details.overview}</p>
+<!-- </div> -->
+</div>
+<!-- <div class="my-32">&nbsp;</div> -->
 <MovieGrid data={Reccomendations} />
 
 <style>
@@ -89,7 +93,6 @@
 			margin-left: 10px;
 		}
 
-		/* git push https://github.com/brooksolo2/The-binger --force */
 	}
 	@media (min-width: 900px) {
 		.TheCard {

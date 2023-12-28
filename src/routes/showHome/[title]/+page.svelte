@@ -57,7 +57,7 @@
 	<img
 		src={concat(Details.backdrop_path)}
 		alt="Show poster"
-		class="min-h-[400px] w-full bg-cover bg-center bg-no-repeat pt-32" />
+		class="min-h-[400px] w-full bg-cover bg-center bg-no-repeat" />
 
 	<div class="absolute top-40 z-50 mx-12 mt-5 rounded-md bg-base-100/80 shadow-xl backdrop-blur-sm">
 		<div class="flex flex-col items-center justify-center gap-4 p-12">
