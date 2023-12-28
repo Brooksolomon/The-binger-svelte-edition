@@ -28,10 +28,9 @@
 	style=" background-image: url({concat(Details.backdrop_path)}); ">
 	<iframe
 		src="https://vidsrc.to/embed/movie/{Details.id}"
-		class="min-h-screen w-10/12"
+		class="w-full aspect-video "
 		title={Details.name}
 		allowfullscreen
-		width="200"
 		> 
 	</iframe>
 
@@ -70,51 +69,3 @@ class="absolute top-40 z-50 mx-12 mt-5 rounded-md bg-base-100/80 shadow-xl backd
 <!-- <div class="my-32">&nbsp;</div> -->
 <MovieGrid data={Reccomendations} />
 
-<style>
-	@media (min-width: 475px) {
-		.TheCard {
-			margin-left: 65px;
-		}
-		.theFrame {
-			width: 100%;
-			height: 50%;
-			margin-top: 40px;
-		}
-	}
-	@media (min-width: 555px) {
-		.TheCard {
-			grid-template-columns: repeat(1, 1fr);
-			margin-left: 145px;
-		}
-	}
-	@media (min-width: 600px) {
-		.TheCard {
-			grid-template-columns: repeat(2, 1fr);
-			margin-left: 10px;
-		}
-
-	}
-	@media (min-width: 900px) {
-		.TheCard {
-			grid-template-columns: repeat(3, 1fr);
-			margin-left: 50px;
-			margin-bottom: 1000px;
-		}
-		.theFrame {
-			width: 70%;
-			height: 90%;
-			margin-left: 300px;
-		}
-	}
-	@media (min-width: 1200px) {
-		.TheCard {
-			grid-template-columns: repeat(4, 1fr);
-			margin-left: 50px;
-		}
-	}
-	@media (min-width: 1500px) {
-		.TheCard {
-			margin-left: 280px;
-		}
-	}
-</style>
