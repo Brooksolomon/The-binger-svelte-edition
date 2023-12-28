@@ -63,14 +63,14 @@
 	<div class="navbar-end gap-4">
 		{#if browser}
 			{#if $authStore !== null}
-				<button class="btn btn-primary btn-outline btn-sm" on:click={authFunc.signoutfunction}>
+				<button class="btn btn-primary btn-outline btn-sm" on:click={authFunc.signoutFunction}>
 					<DoorOpen size="20" />
 					Log out
 				</button>
 			{:else}
 				<button class="btn btn-primary btn-sm" on:click={authFunc.loginFunciton}>
 					<GoogleLogo size="20" />
-					Login with google
+					login
 				</button>
 			{/if}
 		{:else}

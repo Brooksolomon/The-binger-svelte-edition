@@ -147,7 +147,6 @@ const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
 function loginfunction() {
-
   signInWithPopup(auth, provider)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
@@ -175,7 +174,6 @@ function signoutfunction() {
   signOut(auth).then(() => {
     authStore.set(null)
     localStorage.clear();
-    console.log("Signed out ");
   }).catch((error) => {
     console.log(error)
   });
