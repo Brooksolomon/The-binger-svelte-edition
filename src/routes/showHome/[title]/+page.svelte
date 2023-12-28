@@ -21,7 +21,9 @@
 	async function checkIftracking() {
 		tracking = await authFunc.showExists(ShowId, $authStore)
 	}
+	let loading
 	async function addToTracking() {
+		loadind.innerHTML = 'loading...'
 		await authFunc.AddShowToTracking(ShowId, $authStore)
 		checkIftracking()
 	}
@@ -61,29 +63,30 @@
 
 	<div class="absolute top-40 z-50 mx-12 mt-5 rounded-md bg-base-100/80 shadow-xl backdrop-blur-sm">
 		<div class="flex flex-col items-center justify-center gap-4 p-12">
-			<div class="flex flex-col justify-center gap-4">
+			<div class="flex flex-col align-items justify-center gap-4">
 				<h1 class="text-center text-3xl">{Details.name}</h1>
 				{#if browser}
 					{#if $authStore}
 						{#if tracking}
 							<button
 								bind:this={trackin}
-								class="btn btn-error btn-outline btn-sm w-60"
+								class="btn btn-error btn-outline btn-md place-self-center w-60"
 								style="position:absolute, top: 0; left: 0; "
 								on:click={deleteTracking}>Stop Tracking</button>
 						{:else}
 							<button
-								class="btn btn-success btn-outline btn-sm w-60"
+								bind:this={loading}
+								class="btn btn-success btn-outline btn-md place-self-center w-60"
 								style="position:absolute, top: 0; left: 0; "
 								on:click={addToTracking}>Start tracking</button>
 						{/if}
 					{:else}
-						<button class="btn btn-info btn-outline btn-sm">Please Login to track</button>
+						<button class="btn btn-info btn-outline btn-md w-fit place-self-center">Login to track</button>
 					{/if}
 				{:else}
-					<button class="btn btn-ghost btn-outline btn-sm w-fit">
+					<button class="btn btn-ghost btn-outline btn-md place-self-center w-fit">
 						<Spinner />
-						Loading tracking status
+						Loading
 					</button>
 				{/if}
 			</div>

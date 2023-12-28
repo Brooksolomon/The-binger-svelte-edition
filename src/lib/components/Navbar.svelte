@@ -27,17 +27,17 @@
 	$: theme = getTheme()
 </script>
 
-<div class="navbar bg-base-200 px-12 text-primary">
+<div class="navbar bg-base-200 lg:px-12 md:px-4  sm:px-2 text-primary">
 	<div class="navbar-start" >
 		<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 		<div class="dropdown"  >
 			<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 			<!-- svelte-ignore a11y-label-has-associated-control -->
-			<label tabindex="9999" class="btn btn-ghost lg:hidden">
+			<label tabindex="9999" class="btn btn-ghost lg:hidden mr-2">
 				
 				<ListDashes size="24" />
 			</label>
-			<ul
+			<ul				
 				tabindex="9999"
 				class="menu dropdown-content rounded-box menu-lg z-[100] mt-3 w-52 bg-base-200 p-2 shadow">
 				<li><a href="/">Movies</a></li>

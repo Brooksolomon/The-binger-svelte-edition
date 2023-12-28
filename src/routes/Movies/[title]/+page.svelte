@@ -69,3 +69,4 @@ class="absolute top-40 z-50 mx-12 mt-5 rounded-md bg-base-100/80 shadow-xl backd
 <!-- <div class="my-32">&nbsp;</div> -->
 <MovieGrid data={Reccomendations} />
 
+	
