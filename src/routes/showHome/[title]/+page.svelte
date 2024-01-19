@@ -23,7 +23,7 @@
 	}
 	let loading
 	async function addToTracking() {
-		loadind.innerHTML = 'loading...'
+		loading.innerHTML = 'loading...'
 		await authFunc.AddShowToTracking(ShowId, $authStore)
 		checkIftracking()
 	}
