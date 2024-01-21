@@ -1,12 +1,12 @@
 <script>
 	import { NoteBlank } from 'phosphor-svelte'
-	import ShowGrid from '../../../lib/components/ShowGrid.svelte'
+	import ShowGrid from '../../../lib/components/DisplayGrid.svelte'
 	export let data
 	const { answer } = data
 </script>
 
 {#if answer.results.length > 0}
-	<ShowGrid data={answer} />
+	<ShowGrid data={answer} type="Show"/>
 {:else}
 	<div class="flex h-screen w-screen flex-row items-center justify-center">
 		<div class="flex flex-col items-center justify-center gap-4">

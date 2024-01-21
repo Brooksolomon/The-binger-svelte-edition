@@ -39,7 +39,7 @@
 			class="input join-item input-secondary no-animation input-lg z-50 w-full !rounded-l-2xl border-2 border-r-0 border-base-300 bg-transparent backdrop-blur-xl transition-all focus:outline-none"
 			bind:value={searchTerm} />
 
-		<a
+		<a data-sveltekit-reload
 			href="{baseRoute}{searchTerm}"
 			class="btn btn-secondary join-item btn-lg rounded-2xl !border-2 !border-base-300"
 			class:btn-disabled={searchTerm == ''}>

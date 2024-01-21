@@ -1,29 +1,11 @@
 <script>
-    import GridDisplayForShows from '../../grids/gridDisplayForShows.svelte';
-    import GridDisplay from '../../grids/gridDisplayForShows.svelte';
+    import GridDisplay from '../../../lib/components/DisplayGrid.svelte'
+	import SearchBar from '../../../lib/components/SearchBar.svelte'
     let searchTerm = ''
-    export let data 
-    const {Latest} = data
+    
+    export let data  
 
 </script>
+<SearchBar bind:searchTerm baseRoute='/SearchResultShows/' />
+<GridDisplay data = {data.Latest} type='Show'/>
 
-<input type="text" placeholder="Search" class="input in
-put-bordered input-primary manip"  bind:value={searchTerm} />
-<a href="/searchResult/{searchTerm}" >
-<button class="btn btn-secondary">Search</button>
-</a>
-<GridDisplayForShows propValue = {Latest}/>
-
-<style>
-    .manip
-    {
-        margin-top: 20px;
-        margin-left:10%; 
-        width:60%;
-    }
-    @media (min-width: 550px) {
-    .manip{
-        margin-left:18%;
-    }
-    }
-</style>

@@ -1,7 +1,7 @@
 <script>
-	import MovieGrid from '$components/MovieGrid.svelte'
+	import MovieGrid from '$components/DisplayGrid.svelte'
 	import { authFunc, authStore } from '../../../lib/Auth/Auth'
-	import { concat, mergeGenres, cropName } from '$utils/utils.ts'
+	import { concat, mergeGenres,  } from '$utils/utils.ts'
 	export let data
 
 	const { Details } = data

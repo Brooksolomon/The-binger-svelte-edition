@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { concat, cropName } from '$utils/utils.ts'
+	import { concat, cropName } from '../../utils/utils'
 	import { slide } from 'svelte/transition'
 	import { Prohibit, ShieldWarning } from 'phosphor-svelte'
 	let hovered = false
@@ -64,7 +64,7 @@
 					class="absolute bottom-0 left-0 right-0 flex flex-col justify-between gap-2 rounded-md bg-slate-800/60 p-2 py-4 backdrop-blur-sm"
 					transition:slide>
 					<div class="flex flex-row justify-between">
-						<h2 class="text-white">{cropName(d.name, 20)}</h2>
+						<h2 class="text-white">{cropName(d.name)}</h2>
 					</div>
 					<small class="text-neutral">{d.first_air_date.slice(0, 4)}</small>
 				</div>

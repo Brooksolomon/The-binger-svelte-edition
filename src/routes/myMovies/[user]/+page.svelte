@@ -1,5 +1,5 @@
 <script>
-	import MovieGrid from '$components/MovieGrid.svelte'
+	import MovieGrid from '$components/DisplayGrid.svelte'
 	import { NoteBlank } from 'phosphor-svelte'
 	export let data
 	const { answer } = data

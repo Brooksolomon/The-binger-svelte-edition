@@ -1,11 +1,11 @@
 <script>
-	import GridDisplay from '../lib/components/MovieGrid.svelte'
+	import GridDisplay from '../lib/components/DisplayGrid.svelte'
 	import SearchBar from '../lib/components/SearchBar.svelte'
 	export let data
 
 	let searchTerm = ''
 </script>
 
-<SearchBar bind:searchTerm />
+<SearchBar bind:searchTerm baseRoute='/searchResult/'/>
 
-<GridDisplay data={data.Latest} />
+<GridDisplay data={data.Latest} type="Movie"/>
