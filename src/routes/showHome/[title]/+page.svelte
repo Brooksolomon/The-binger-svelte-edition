@@ -106,13 +106,14 @@
 			<div class="w-full rounded-md p-1 transition-all">
 				{#if season.collapsed}
 					<div
+					on:click={() => {
+						season.collapsed = !season.collapsed
+					}}
 						in:slide
 						class="font-lg flex flex-row items-center justify-between gap-4 rounded-2xl bg-base-300 p-4 text-xl">
 						<div class="flex flex-row gap-4 justify-center">
 							<span
-								on:click={() => {
-									season.collapsed = !season.collapsed
-								}}>
+								>
 								<CaretCircleDown size="24" />
 							</span>
 							<h3>
@@ -133,12 +134,12 @@
 						{/if}
 					</div>
 				{:else}
-					<div transition:slide>
+					<div transition:slide on:click={() => {
+						season.collapsed = !season.collapsed
+					}}>
 						<div class="font-lg flex flex-row items-center justify-between gap-4 rounded-2xl bg-base-300 p-4 text-xl">
 							<span
-								on:click={() => {
-									season.collapsed = !season.collapsed
-								}}>
+								>
 								<CaretDown size="24" />
 							</span>
 							<h3>
