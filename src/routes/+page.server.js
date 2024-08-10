@@ -18,8 +18,8 @@ export const load = async ({ fetch }) => {
   }
 
   return {
-    Latest: fetchLatest(),
-    Movies: fetchMovies()
+    Latest:  fetchLatest(),
+    Movies:  fetchMovies()
   }
 
 }

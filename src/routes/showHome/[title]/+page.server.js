@@ -35,7 +35,7 @@ const options = {
   
 
     return {
-        Details:fetchDetails(),
+        Details: fetchDetails(),
         Reccomendations : fetchReccomendations(),
         ShowSeasons : seasons,
         ShowId:showid

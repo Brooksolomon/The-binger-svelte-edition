@@ -134,9 +134,7 @@
 						{/if}
 					</div>
 				{:else}
-					<div transition:slide on:click={() => {
-						season.collapsed = !season.collapsed
-					}}>
+					<div transition:slide on:click={() => {season.collapsed = !season.collapsed}}>
 						<div class="font-lg flex flex-row items-center justify-between gap-4 rounded-2xl bg-base-300 p-4 text-xl">
 							<span
 								>
