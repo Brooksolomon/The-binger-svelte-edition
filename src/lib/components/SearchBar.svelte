@@ -15,10 +15,10 @@
 </script>
 
 <svelte:window bind:innerWidth />
-
-<div class="px-auto flex w-full flex-row justify-center overflow-clip px-12 py-4 pt-8">
+<form>
+<div class="px-auto  w-full flex-row justify-center overflow-clip px-12 py-4 pt-8 z-50 text-slate-800">
 	<div
-		class="join relative flex max-w-6xl grow flex-row items-center justify-center overflow-clip px-2">
+		class="join relative flex max-w-6xl grow flex-row items-center justify-center overflow-clip px-2 z-40">
 		{#each Array(9) as item, i}
 			{@const randX = i + Math.random() * innerWidth * 0.6 + 90}
 			{@const randY = i + Math.random() * 10}
@@ -36,14 +36,22 @@
 		<input
 			type="text"
 			placeholder="Search {baseRoute == '/SearchResultShows/' ? 'Shows' : 'Movies'} "
-			class="input join-item input-secondary no-animation input-lg z-50 w-full !rounded-l-2xl border-2 border-r-0 border-base-300 bg-transparent backdrop-blur-xl transition-all focus:outline-none"
-			bind:value={searchTerm} />
+			class="input join-item input-primary no-animation input-lg z-50 w-full !rounded-l-2xl border-2 border-r-0 border-base-300 bg-transparent backdrop-blur-xl transition-all focus:outline-none"
+			bind:value={searchTerm}
+			 />
 
-		<a data-sveltekit-reload
-			href="{baseRoute}{searchTerm}"
-			class="btn btn-secondary join-item btn-lg rounded-2xl !border-2 !border-base-300"
-			class:btn-disabled={searchTerm == ''}>
+			 <button 
+			 data-sveltekit-reload
+			 type="submit"
+			 class="btn btn-secondary join-item btn-lg rounded-2xl !border-2 !border-base-300 z-50 bg-primary"
+			 class:btn-disabled={searchTerm == ''}
+			 on:click={() => window.location.href = `${baseRoute}${searchTerm}`}
+			 >
+			 <!-- Button content goes here -->
+		 
+
 			<MagnifyingGlass weight="duotone" size="20" />
-		</a>
+		</button>
 	</div>
 </div>
+</form>
