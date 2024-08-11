@@ -28,11 +28,8 @@
       class="h-full w-full  hidden md:flex"
       alt=""
        />
-      <div class=" flex -translate-y-1/2 transform ">
-        
-      </div>
 
-      <div class="ml-[-30vw] w-[30vw]  -translate-x-[60vw]   translate-y-2 md:translate-y-2/4  z-20">
+      <div class="ml-[-30vw] w-[100VW] lg:w-[30vw]  -translate-x-[60vw]   translate-y-3/4   z-20 ">
             <h1 class="text-2xl">{type=="Movie"?Movie.title:Movie.name}</h1>
             <p class=" "> {type=="Movie"?mergeGenresFromId(Movie.release_date,Movie.genre_ids,type):mergeGenresFromId(Movie.first_air_date,Movie.genre_ids,type)} </p>
             <p class="hidden lg:flex">{Movie.overview}</p>
