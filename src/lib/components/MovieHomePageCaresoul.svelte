@@ -19,8 +19,13 @@
     {/if}
     
     <img
+      src="{concat(Movie.poster_path)}"
+      class="h-full w-full md:hidden "
+      alt=""
+       />
+       <img
       src="{concat(Movie.backdrop_path)}"
-      class="h-full w-full  "
+      class="h-full w-full  hidden md:flex"
       alt=""
        />
       <div class=" flex -translate-y-1/2 transform ">
@@ -29,7 +34,7 @@
 
       <div class="ml-[-30vw] w-[30vw]  -translate-x-[60vw]   translate-y-2 md:translate-y-2/4  z-20">
             <h1 class="text-2xl">{type=="Movie"?Movie.title:Movie.name}</h1>
-            <p class="hidden md:flex"> {type=="Movie"?mergeGenresFromId(Movie.release_date,Movie.genre_ids,type):mergeGenresFromId(Movie.first_air_date,Movie.genre_ids,type)} </p>
+            <p class=" "> {type=="Movie"?mergeGenresFromId(Movie.release_date,Movie.genre_ids,type):mergeGenresFromId(Movie.first_air_date,Movie.genre_ids,type)} </p>
             <p class="hidden lg:flex">{Movie.overview}</p>
             <a
             href={type === "Movie" ? `/Movies/${Movie.id}` : `/showHome/${Movie.id}`}><button class="btn   w-full hover:scale-105 hover:btn-outline mt-2">Watch Now</button>
@@ -52,6 +57,11 @@
     width: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)); 
     z-index: 0;
+}
+@media only screen and (max-width: 600px) {
+    .background-container::before  {
+        height: 75%;
+  }
 }
 </style>
 
