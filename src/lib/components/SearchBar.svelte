@@ -16,9 +16,9 @@
 
 <svelte:window bind:innerWidth />
 <form>
-<div class="px-auto  w-full flex-row justify-center overflow-clip px-12 py-4 pt-8 z-50 text-slate-800">
+<div class="px-auto hidden lg:flex w-full flex-row justify-center overflow-clip px-12 py-4 pt-8 z-40 ">
 	<div
-		class="join relative flex max-w-6xl grow flex-row items-center justify-center overflow-clip px-2 z-40">
+		class="join relative flex max-w-6xl grow flex-row items-center justify-center overflow-clip px-2 z-50">
 		{#each Array(9) as item, i}
 			{@const randX = i + Math.random() * innerWidth * 0.6 + 90}
 			{@const randY = i + Math.random() * 10}
