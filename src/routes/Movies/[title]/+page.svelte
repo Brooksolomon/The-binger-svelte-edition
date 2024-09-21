@@ -38,7 +38,7 @@
 	
 	<iframe
 		src="https://vidsrc.pro/embed/movie/{Details.id}"
-		class=" w-[100%] md:w-[70%] aspect-video "
+		class=" w-[100%] md:w-[70%] aspect-video rounded-2xl"
 		title={Details.name}
 		allowfullscreen
 		> 
@@ -46,7 +46,7 @@
 
 	
 </div>
-<div class="card-body items-center  top-40  mx-[5%]  rounded-md  shadow-2xl backdrop-blur-sm  ">
+<div class="card-body items-center  top-40  mx-[5%]  rounded-2xl  shadow-2xl backdrop-blur-sm  ">
   <div class="hero-content flex-col lg:flex-row gap-24">
     <img
       src={concat(Details.poster_path)}

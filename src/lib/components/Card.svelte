@@ -15,7 +15,7 @@
 		on:mouseout={() => (hovered = false)}
 		on:blur={() => (hovered = false)}
 		data-sveltekit-reload>
-		<div class="relative h-full max-w-xs overflow-hidden rounded-md pb-1 ">
+		<div class="relative h-full max-w-xs overflow-hidden rounded-2xl pb-1 ">
 			{#if d.adult}
 				<span
 					class=" absolute right-1 top-1 z-50 flex w-fit gap-1 rounded-md bg-orange-500 p-1 px-2">
