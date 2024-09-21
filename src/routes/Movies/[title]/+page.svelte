@@ -27,7 +27,9 @@
 
 	<div class="fixed top-0 left-0 z-[-1] blur-xl h-screen w-[100%] bg-white/5">
 	<span class="  blur lazy-load-image-loaded" style="color: transparent; display: inline-block; height: 100%; width: 100%;">
-	<img src="{concat(Details.backdrop_path)}" width="100%" height="100%" class=" object-cover !opacity-60">
+	<img src="{concat(Details.backdrop_path)}" width="100%" height="100%" class=" object-cover !opacity-60 h-full w-full  hidden md:flex">
+	<img src="{concat(Details.poster_path)}" width="100%" height="100%" class=" object-cover !opacity-60 h-full w-full md:hidden ">
+
 </span>
 </div>
 <div
