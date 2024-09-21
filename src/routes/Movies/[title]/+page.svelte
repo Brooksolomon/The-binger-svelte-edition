@@ -28,7 +28,7 @@
 <!-- 
 <div style=" background-image: url({concat(Details.backdrop_path)});   " class="backdrop-blur-sm mt-[-80px]"> -->
 	<div class="fixed top-0 left-0 z-[-1] blur-xl h-screen w-full bg-white/5">
-	<span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block; height: 100%; width: 100%;">
+	<span class="  blur lazy-load-image-loaded" style="color: transparent; display: inline-block; height: 100%; width: 100%;">
 	<img src="{concat(Details.backdrop_path)}" width="100%" height="100%" class="w-full h-full object-cover !opacity-60">
 </span>
 </div>
