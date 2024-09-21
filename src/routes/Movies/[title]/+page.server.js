@@ -27,7 +27,6 @@ const options = {
 
       const data = await myres.json();
 
-      console.log(data)
       const filteredTrailers = data.results.filter(trailer => {
         return trailer.site === "YouTube" && trailer.type === "Trailer";
       });
