@@ -26,6 +26,7 @@
 </script>
 
 	<div class="fixed top-0 left-0 z-[-1] blur-xl h-screen w-[100%] bg-white/5">
+	<div class="fixed top-0 left-0 z-[-1] blur-xl h-screen w-[100%] bg-white/5">
 	<span class="  blur lazy-load-image-loaded" style="color: transparent; display: inline-block; height: 100%; width: 100%;">
 	<img src="{concat(Details.backdrop_path)}" width="100%" height="100%" class=" object-cover !opacity-60 h-full w-full  hidden md:flex">
 	<img src="{concat(Details.poster_path)}" width="100%" height="100%" class=" object-cover !opacity-60 h-full w-full md:hidden ">
@@ -34,10 +35,12 @@
 </div>
 <div
 	class="flex min-h-screen w-full flex-row items-center justify-center bg-cover bg-center bg-no-repeat p-12  mx-auto "
+	class="flex min-h-screen w-full flex-row items-center justify-center bg-cover bg-center bg-no-repeat p-12  mx-auto "
 	>
 	
 	<iframe
 		src="https://vidsrc.pro/embed/movie/{Details.id}"
+		class=" w-[100%] md:w-[70%] aspect-video "
 		class=" w-[100%] md:w-[70%] aspect-video "
 		title={Details.name}
 		allowfullscreen
@@ -46,6 +49,7 @@
 
 	
 </div>
+<div class="card-body items-center  top-40  mx-[5%]  rounded-md  shadow-2xl backdrop-blur-sm  ">
 <div class="card-body items-center  top-40  mx-[5%]  rounded-md  shadow-2xl backdrop-blur-sm  ">
   <div class="hero-content flex-col lg:flex-row gap-24">
     <img
@@ -95,6 +99,7 @@
 </div>
 
 
+<div class="carousel carousel-center bg-transparent rounded-box w-[80%] m-4 space-x-4 p-4 ml-[10%]">
 <div class="carousel carousel-center bg-transparent rounded-box w-[80%] m-4 space-x-4 p-4 ml-[10%]">
 	<div class="carousel-item"> 
 {#each Trailers as Trailer}
