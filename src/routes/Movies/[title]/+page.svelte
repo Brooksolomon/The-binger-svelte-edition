@@ -27,7 +27,7 @@
 	class="flex min-h-screen w-full flex-row items-center justify-center bg-cover bg-center bg-no-repeat p-12"
 	style=" background-image: url({concat(Details.backdrop_path)}); ">
 	<iframe
-		src="https://vidsrc.xyz/embed/movie/{Details.id}"
+		src="https://vidsrc.pro/embed/movie/{Details.id}"
 		class="w-full aspect-video "
 		title={Details.name}
 		allowfullscreen

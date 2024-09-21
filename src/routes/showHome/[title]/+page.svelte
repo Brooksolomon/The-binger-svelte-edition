@@ -59,7 +59,7 @@
 
 <div  style="background-image: url({concat(Details.backdrop_path)})" class="flex min-h-screen w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-12">
     <div class=" z-50 px-5 mb-5  rounded-md bg-base-100/100 shadow-xl backdrop-blur-sm"><h1 class="text-center"> playing season  {watchingSeason} episode  {watchingEpisode}</h1></div>
-	<iframe src='https://vidsrc.xyz/embed/tv/{ShowId}/{watchingSeason}/{watchingEpisode}' class="w-full aspect-video " title="season {watchingSeason} episode  {watchingEpisode}" allowfullscreen></iframe>
+	<iframe src='https://vidsrc.pro/embed/tv/{ShowId}/{watchingSeason}/{watchingEpisode}' class="w-full aspect-video " title="season {watchingSeason} episode  {watchingEpisode}" allowfullscreen></iframe>
 
 
 <div class=" top-40 z-50  mt-5 rounded-md bg-base-100/80 shadow-xl backdrop-blur-sm">
