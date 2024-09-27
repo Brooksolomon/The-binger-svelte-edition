@@ -1,7 +1,7 @@
 <script>
 	import MovieGrid from '$components/DisplayGrid.svelte'
 	import { authFunc, authStore } from '../../../lib/Auth/Auth'
-	import { concat, mergeGenres,  } from '$utils/utils.ts'
+	import { concat, mergeGenres } from '$utils/utils.ts'
 	export let data
 
 	const { Details } = data
@@ -28,19 +28,17 @@
 	style=" background-image: url({concat(Details.backdrop_path)}); ">
 	<iframe
 		src="https://vidsrc.xyz/embed/movie/{Details.id}"
-		class="w-full aspect-video "
+		class="aspect-video w-full"
 		title={Details.name}
-		allowfullscreen
-		> 
+		allowfullscreen>
 	</iframe>
 
-		<!-- <figure style="height: 500px; width:600px " class="hidden"><img  class="hidden"  src="{concatctinate(Details.poster_path)}" alt="Movie" /></figure> -->
-
-	
+	<!-- <figure style="height: 500px; width:600px " class="hidden"><img  class="hidden"  src="{concatctinate(Details.poster_path)}" alt="Movie" /></figure> -->
 </div>
 <!-- <div
 class="absolute top-40 z-50 mx-12 mt-5 rounded-md bg-base-100/80 shadow-xl backdrop-blur-sm"> -->
-<div class="card-body items-center  top-40  mx-12 mt-5 rounded-md bg-base-100/80 shadow-xl backdrop-blur-sm">
+<div
+	class="card-body top-40 mx-12 mt-5 items-center rounded-md bg-base-100/80 shadow-xl backdrop-blur-sm">
 	<h1 class="card-title text-center text-3xl">{Details.original_title}</h1>
 
 	{mergeGenres(Details.release_date, Details.genres, Details.runtime)}
@@ -64,9 +62,7 @@ class="absolute top-40 z-50 mx-12 mt-5 rounded-md bg-base-100/80 shadow-xl backd
 		</a>
 	{/if}
 	<p>{Details.overview}</p>
-<!-- </div> -->
+	<!-- </div> -->
 </div>
 <!-- <div class="my-32">&nbsp;</div> -->
 <MovieGrid data={Reccomendations} />
-
-	
