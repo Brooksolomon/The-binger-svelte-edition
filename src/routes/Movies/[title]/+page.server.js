@@ -18,12 +18,25 @@ const options = {
     const fetchReccomendations = async() =>{
       const myres = await fetch(reqForSimilar, options)
 
-  
       return await myres.json()
       }
+
+    let reqForTrailer ='https://api.themoviedb.org/3/movie/'+ params.title +'/videos?language=en-US'
+    const fetchTrailers = async() =>{
+      const myres = await fetch(reqForTrailer,options)
+
+      const data = await myres.json();
+
+      const filteredTrailers = data.results.filter(trailer => {
+        return trailer.site === "YouTube" && trailer.type === "Trailer";
+      });
+    
+      return filteredTrailers;
+    }
     return {
         Details:fetchDetails(),
-        Reccomendations : fetchReccomendations()
+        Reccomendations : fetchReccomendations(),
+        Trailers : fetchTrailers()
     }
     
     

@@ -10,7 +10,7 @@
 
 </script>
 
-<div class="flex flex-row flex-wrap justify-center gap-4 bg-base-100 px-12 py-6 ">
+<div class="flex flex-row flex-wrap justify-center gap-4 bg-transparent px-12 py-6 ">
 
 	{#each filterItems(data.results )as d}
 
