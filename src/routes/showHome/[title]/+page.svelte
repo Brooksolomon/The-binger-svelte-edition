@@ -203,10 +203,10 @@
 								{/if}
 								<div>
 									<div
-										class="carousel-center carousel m-4 ml-[10%] w-[80%] space-x-4 rounded-2xl bg-transparent p-4">
+										class="carousel carousel-center w-[100%] space-x-4 rounded-2xl bg-transparent p-4">
 										<div class="carousel-item">
 											{#each ShowSeasons[season.season_number - 1].episodes as e}
-												<div class="m-2 flex flex-col items-center justify-center">
+												<div class="m-8 flex flex-col items-center justify-center">
 													{#key reset}
 														<h2 class="card-title">
 															{e.episode_number + '.' + cropName(e.name, 13)}
