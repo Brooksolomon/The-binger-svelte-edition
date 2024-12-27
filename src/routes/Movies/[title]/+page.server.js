@@ -28,15 +28,24 @@ const options = {
       const data = await myres.json();
 
       const filteredTrailers = data.results.filter(trailer => {
-        return trailer.site === "YouTube" && trailer.type === "Trailer";
+        return trailer.site === "YouTube" && (trailer.type === "Teaser" || trailer.type==="Trailer");
       });
     
       return filteredTrailers;
     }
+
+    let reqForReviews = 'https://api.themoviedb.org/3/movie/' + params.title + '/reviews'
+    const fetchReviews = async() =>{
+      const myres = await fetch(reqForReviews,options)
+      const data = await myres.json();
+      return data;
+    }
+
     return {
         Details:fetchDetails(),
         Reccomendations : fetchReccomendations(),
-        Trailers : fetchTrailers()
+        Trailers : fetchTrailers(),
+        Reviews: fetchReviews()
     }
     
     

@@ -32,13 +32,32 @@ const options = {
     let y =await fetchc();
     seasons.push(y)
   }
-  
+  let reqForTrailer ='https://api.themoviedb.org/3/tv/'+ params.title +'/videos?language=en-US'
+    const fetchTrailers = async() =>{
+      const myres = await fetch(reqForTrailer,options)
+
+      const data = await myres.json();
+      const filteredTrailers = data.results.filter(trailer => {
+        return trailer.site === "YouTube" && (trailer.type === "Teaser" || trailer.type==="Trailer");
+      });
+    
+      return filteredTrailers;
+    }
+    
+    let reqForReviews = 'https://api.themoviedb.org/3/tv/' + params.title + '/reviews'
+    const fetchReviews = async() =>{
+      const myres = await fetch(reqForReviews,options)
+      const data = await myres.json();
+      return data;
+    }
 
     return {
         Details: fetchDetails(),
         Reccomendations : fetchReccomendations(),
         ShowSeasons : seasons,
-        ShowId:showid
+        ShowId:showid,
+        Trailers : fetchTrailers(),
+        Reviews: fetchReviews()
     }
     
     
