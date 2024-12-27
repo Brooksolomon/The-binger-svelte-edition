@@ -200,52 +200,55 @@
 									<span class="loading loading-ball loading-lg"></span>
 								{/if}
 								<div>
-									<div class="myShowGrid">
-										{#each ShowSeasons[season.season_number - 1].episodes as e}
-											<div>
-												{#key reset}
-													<h2 class="card-title">
-														{e.episode_number + '.' + cropName(e.name, 13)}
-													</h2>
-													<div class="join">
-														<button
-															class="btn btn-warning btn-outline join-item rounded-md hover:scale-105"
-															on:click={() => {
-																watchingSeason = season.season_number
-																watchingEpisode = e.episode_number
-																document.body.scrollTop = 0 // For Safari
-																document.documentElement.scrollTop = 0
-															}}>
-															Watch
-														</button>
+									<div
+										class="carousel-center carousel m-4 ml-[10%] w-[80%] space-x-4 rounded-2xl bg-transparent p-4">
+										<div class="carousel-item">
+											{#each ShowSeasons[season.season_number - 1].episodes as e}
+												<div class="m-2 flex flex-col items-center justify-center">
+													{#key reset}
+														<h2 class="card-title">
+															{e.episode_number + '.' + cropName(e.name, 13)}
+														</h2>
+														<div class="join">
+															<button
+																class="btn btn-warning btn-outline join-item w-[100%] rounded-md hover:scale-105"
+																on:click={() => {
+																	watchingSeason = season.season_number
+																	watchingEpisode = e.episode_number
+																	document.body.scrollTop = 0 // For Safari
+																	document.documentElement.scrollTop = 0
+																}}>
+																Watch
+															</button>
 
-														{#if $authStore && tracking}
-															{#await checkEpisode(e.id)}
-																&nbsp;
-															{:then value}
-																{#if !reload}
-																	{#if !value}
-																		<button
-																			class="btn btn-success btn-outline join-item rounded-full hover:scale-105"
-																			on:click={async () => {
-																				await addEpisode(e.id)
-																				value = !value
-																			}}>+</button>
-																	{:else}
-																		<button
-																			class="btn btn-success join-item rounded-full hover:scale-105"
-																			on:click={() => {
-																				deleteWatchedEpisode(e.id)
-																				value = !value
-																			}}>✓</button>
+															{#if $authStore && tracking}
+																{#await checkEpisode(e.id)}
+																	&nbsp;
+																{:then value}
+																	{#if !reload}
+																		{#if !value}
+																			<button
+																				class="btn btn-success btn-outline join-item rounded-full hover:scale-105"
+																				on:click={async () => {
+																					await addEpisode(e.id)
+																					value = !value
+																				}}>+</button>
+																		{:else}
+																			<button
+																				class="btn btn-success join-item rounded-full hover:scale-105"
+																				on:click={() => {
+																					deleteWatchedEpisode(e.id)
+																					value = !value
+																				}}>✓</button>
+																		{/if}
 																	{/if}
-																{/if}
-															{/await}
-														{/if}
-													</div>
-												{/key}
-											</div>
-										{/each}
+																{/await}
+															{/if}
+														</div>
+													{/key}
+												</div>
+											{/each}
+										</div>
 									</div>
 								</div>
 							</div>
