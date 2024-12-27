@@ -26,6 +26,16 @@
 		watched = await authFunc.checkMovieFunction(Details.id, $authStore)
 	}
 	temp()
+	if (browser) {
+		window.addEventListener('message', (event) => {
+			if (event.origin !== 'https://vidlink.pro') return
+
+			if (event.data?.type === 'MEDIA_DATA') {
+				const mediaData = event.data.data
+				localStorage.setItem('vidLinkProgress', JSON.stringify(mediaData))
+			}
+		})
+	}
 </script>
 
 <div class="fixed left-0 top-0 z-[-1] h-screen w-[100%] bg-white/5 blur-xl">
@@ -36,18 +46,20 @@
 			src={concat(Details.backdrop_path)}
 			width="100%"
 			height="100%"
-			class=" hidden h-full w-full object-cover !opacity-60 md:flex" />
+			class=" hidden h-full w-full object-cover !opacity-60 md:flex"
+			alt="movie poster" />
 		<img
 			src={concat(Details.poster_path)}
 			width="100%"
 			height="100%"
-			class=" h-full w-full object-cover !opacity-60 md:hidden" />
+			class=" h-full w-full object-cover !opacity-60 md:hidden"
+			alt="movie poster" />
 	</span>
 </div>
 <div
 	class="mx-auto flex min-h-screen w-full flex-row items-center justify-center bg-cover bg-center bg-no-repeat p-12">
 	<iframe
-		src="https://vidlink.pro/movie/{Details.id}?primaryColor=1d29cd&secondaryColor=aba6a6&iconColor=f5f5f5&icons=default&player=default&title=true&poster=true&autoplay=false&nextbutton=true"
+		src="https://vidlink.pro/movie/{Details.id}?primaryColor=1d29cd&secondaryColor=aba6a6&iconColor=f5f5f5&icons=default&player=default&title=true&poster=true"
 		class=" aspect-video w-[100%] rounded-2xl md:w-[70%]"
 		title={Details.name}
 		allowfullscreen>
@@ -55,7 +67,7 @@
 </div>
 <div class="card-body top-40 mx-[5%] items-center rounded-2xl shadow-2xl backdrop-blur-sm">
 	<div class="hero-content flex-col gap-24 lg:flex-row">
-		<img src={concat(Details.poster_path)} class="w-48 rounded-lg shadow-2xl" />
+		<img src={concat(Details.poster_path)} class="w-48 rounded-lg shadow-2xl" alt="movie poster" />
 		<div>
 			<h1 class="text-5xl font-bold">{Details.original_title}</h1>
 			<div class="my-6 flex w-40 flex-row gap-2">
@@ -95,7 +107,12 @@
 		</div>
 	</div>
 </div>
-<TrailerDisplay {Trailers} />
-<ReviewDisplay reviews={Reviews.results} />
+{#if Trailers}
+	<TrailerDisplay {Trailers} />
+{/if}
+
+{#if Reviews.results}
+	<ReviewDisplay reviews={Reviews.results} />
+{/if}
 <h1 class="my-4 ml-[8%] mt-4 text-5xl font-bold">Similar Movies</h1>
 <MovieGrid data={Reccomendations} />
