@@ -80,12 +80,14 @@
 			src={concat(Details.backdrop_path)}
 			width="100%"
 			height="100%"
-			class=" hidden h-full w-full object-cover !opacity-60 md:flex" />
+			class=" hidden h-full w-full object-cover !opacity-60 md:flex"
+			alt="movie backgorund" />
 		<img
 			src={concat(Details.poster_path)}
 			width="100%"
 			height="100%"
-			class=" h-full w-full object-cover !opacity-60 md:hidden" />
+			class=" h-full w-full object-cover !opacity-60 md:hidden"
+			alt="movie background" />
 	</span>
 </div>
 
@@ -100,7 +102,7 @@
 
 <div class="card-body top-40 mx-[5%] items-center rounded-2xl shadow-2xl backdrop-blur-sm">
 	<div class="hero-content flex-col gap-24 lg:flex-row">
-		<img src={concat(Details.poster_path)} class="w-48 rounded-lg shadow-2xl" />
+		<img src={concat(Details.poster_path)} class="w-48 rounded-lg shadow-2xl" alt="movie poster" />
 		<div>
 			<h1 class="text-5xl font-bold">{Details.name}</h1>
 
@@ -268,31 +270,3 @@
 </div>
 <TrailerDisplay {Trailers} />
 <ReviewDisplay reviews={Reviews.results} />
-
-<style>
-	.myShowGrid {
-		display: grid;
-		grid-template-columns: auto auto auto auto auto;
-	}
-	@media (min-width: 200px) {
-		.myShowGrid {
-			grid-template-columns: repeat(1, 1fr);
-		}
-	}
-	@media (min-width: 350px) {
-		.myShowGrid {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-	@media (min-width: 600px) {
-		.myShowGrid {
-			grid-template-columns: repeat(4, 1fr);
-		}
-	}
-
-	@media (min-width: 800px) {
-		.myShowGrid {
-			grid-template-columns: repeat(5, 1fr);
-		}
-	}
-</style>

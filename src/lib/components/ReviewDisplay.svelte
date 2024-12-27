@@ -21,7 +21,7 @@
 	<Star weight="duotone" size={64} class="mt-2" />
 </div>
 
-<div class="carousel carousel-center m-4 ml-[10%] w-[80%] space-x-4 rounded-2xl bg-transparent p-4">
+<div class="carousel-center carousel m-4 ml-[10%] w-[80%] space-x-4 rounded-2xl bg-transparent p-4">
 	<div class="carousel-item">
 		{#each reviews as review}
 			<div
@@ -110,23 +110,6 @@
 </dialog>
 
 <style>
-	.review {
-		background-color: #ffffff;
-		border-radius: 16px;
-		padding: 20px;
-		margin-bottom: 20px;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-		max-width: 320px;
-		word-break: break-all; /* Breaks at arbitrary points */
-		word-wrap: break-word; /* Fallback for older browsers */
-		overflow-wrap: break-word;
-		margin: 16px;
-		transition:
-			transform 0.3s,
-			box-shadow 0.3s,
-			background-color 0.3s;
-	}
-
 	.author {
 		display: flex;
 		align-items: center;
@@ -175,12 +158,5 @@
 
 	.read-more-button:hover {
 		color: #1d6fa5;
-	}
-
-	.divider {
-		height: 1px;
-		background-color: #eaeaea;
-		margin: 20px 0;
-		border: none;
 	}
 </style>
