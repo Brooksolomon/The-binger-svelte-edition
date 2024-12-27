@@ -146,7 +146,7 @@
 			{/if}
 		</div>
 	</div>
-	<div class="flex w-[90%] flex-col items-center justify-center gap-4 p-12">
+	<div class="flex w-[90%] flex-col gap-4">
 		{#each localSeasons as season}
 			{#if season.season_number > 0}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -271,9 +271,14 @@
 		display: grid;
 		grid-template-columns: auto auto auto auto auto;
 	}
-	@media (min-width: 300px) {
+	@media (min-width: 200px) {
 		.myShowGrid {
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	@media (min-width: 350px) {
+		.myShowGrid {
+			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 	@media (min-width: 600px) {
