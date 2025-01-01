@@ -5,6 +5,7 @@
 	import { Clock, SignIn, Eye, EyeSlash, FilmStrip } from 'phosphor-svelte'
 	import TrailerDisplay from '../../../lib/components/TrailerDisplay.svelte'
 	import ReviewDisplay from '../../../lib/components/ReviewDisplay.svelte'
+	import { browser } from '$app/environment'
 	export let data
 
 	const { Details } = data
